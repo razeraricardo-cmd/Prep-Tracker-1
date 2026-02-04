@@ -2,98 +2,98 @@
 
 import Link from 'next/link';
 import Logo from '../icons/Logo';
-import { Mail, Phone, MapPin, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, Instagram, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-[#1a1a2e] text-white">
+      <div className="container-app py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
-          <div className="space-y-4">
-            <Logo size="md" />
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Prevenção inteligente de ISTs com acompanhamento médico especializado.
-              Sua saúde em primeiro lugar.
+          <div className="space-y-5">
+            <Logo size="md" variant="white" />
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Prevenção de ISTs e acompanhamento de PrEP com infectologista
+              especializado. Atendimento 100% online.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/prepara.saude"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-slate-800 rounded-lg hover:bg-primary-600 transition-colors"
+                className="p-2.5 bg-white/10 rounded-xl hover:bg-[#e94560] transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://wa.me/5511999999999"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-slate-800 rounded-lg hover:bg-primary-600 transition-colors"
-                aria-label="LinkedIn"
+                className="p-2.5 bg-white/10 rounded-xl hover:bg-[#25D366] transition-colors"
+                aria-label="WhatsApp"
               >
-                <Linkedin size={20} />
+                <MessageCircle size={20} />
               </a>
             </div>
           </div>
 
-          {/* Links rápidos */}
+          {/* Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Links Rápidos</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold text-lg mb-5">Navegação</h3>
+            <ul className="space-y-3">
               <li>
-                <Link href="/sobre" className="text-slate-400 hover:text-white transition-colors">
-                  Sobre o Dr. Ricardo
+                <Link href="/#como-funciona" className="text-gray-400 hover:text-white transition-colors">
+                  Como funciona
                 </Link>
               </li>
               <li>
-                <Link href="/servicos" className="text-slate-400 hover:text-white transition-colors">
-                  Serviços
+                <Link href="/#sobre-prep" className="text-gray-400 hover:text-white transition-colors">
+                  Sobre PrEP
                 </Link>
               </li>
               <li>
-                <Link href="/educacao" className="text-slate-400 hover:text-white transition-colors">
-                  Conteúdo Educativo
+                <Link href="/#prevencao" className="text-gray-400 hover:text-white transition-colors">
+                  Prevenção
                 </Link>
               </li>
               <li>
-                <Link href="/precos" className="text-slate-400 hover:text-white transition-colors">
-                  Preços
+                <Link href="/sobre" className="text-gray-400 hover:text-white transition-colors">
+                  O médico
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-slate-400 hover:text-white transition-colors">
-                  Perguntas Frequentes
+                <Link href="/agendar" className="text-gray-400 hover:text-white transition-colors">
+                  Agendar consulta
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Serviços */}
+          {/* Informações */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Serviços</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold text-lg mb-5">Informações</h3>
+            <ul className="space-y-3">
               <li>
-                <Link href="/servicos/prep" className="text-slate-400 hover:text-white transition-colors">
-                  PrEP - Profilaxia HIV
+                <Link href="/educacao/prep" className="text-gray-400 hover:text-white transition-colors">
+                  O que é PrEP
                 </Link>
               </li>
               <li>
-                <Link href="/servicos/ist" className="text-slate-400 hover:text-white transition-colors">
-                  Prevenção de ISTs
+                <Link href="/educacao/ist" className="text-gray-400 hover:text-white transition-colors">
+                  ISTs e prevenção
                 </Link>
               </li>
               <li>
-                <Link href="/servicos/vacinas" className="text-slate-400 hover:text-white transition-colors">
-                  Vacinação
+                <Link href="/educacao/vacinas" className="text-gray-400 hover:text-white transition-colors">
+                  Vacinas importantes
                 </Link>
               </li>
               <li>
-                <Link href="/servicos/exames" className="text-slate-400 hover:text-white transition-colors">
-                  Solicitação de Exames
+                <Link href="/faq" className="text-gray-400 hover:text-white transition-colors">
+                  Perguntas frequentes
                 </Link>
               </li>
             </ul>
@@ -101,39 +101,44 @@ export default function Footer() {
 
           {/* Contato */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contato</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-slate-400">
-                <Mail size={18} className="text-primary-400" />
-                <span>contato@prepsaude.com.br</span>
+            <h3 className="font-semibold text-lg mb-5">Contato</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center gap-3 text-gray-400">
+                <Mail size={18} className="text-[#0f969c]" />
+                <a href="mailto:contato@prepara.com.br" className="hover:text-white transition-colors">
+                  contato@prepara.com.br
+                </a>
               </li>
-              <li className="flex items-center gap-3 text-slate-400">
-                <Phone size={18} className="text-primary-400" />
-                <span>(11) 9xxxx-xxxx</span>
-              </li>
-              <li className="flex items-start gap-3 text-slate-400">
-                <MapPin size={18} className="text-primary-400 mt-1" />
-                <span>São Paulo, SP - Brasil<br />Atendimento 100% Online</span>
+              <li className="flex items-center gap-3 text-gray-400">
+                <Phone size={18} className="text-[#0f969c]" />
+                <a href="https://wa.me/5511999999999" className="hover:text-white transition-colors">
+                  (11) 99999-9999
+                </a>
               </li>
             </ul>
+
+            <div className="mt-6 p-4 bg-white/5 rounded-xl">
+              <p className="text-sm text-gray-300">
+                <strong className="text-white">Dr. Ricardo Razera</strong><br />
+                CRM-SP 243.898<br />
+                Médico Infectologista
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-slate-800 mt-12 pt-8">
+        {/* Bottom */}
+        <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-slate-400 text-sm text-center md:text-left">
-              <p>© {currentYear} PrEP Saúde. Todos os direitos reservados.</p>
-              <p className="mt-1">
-                Dr. Ricardo José Razera - CRM SP 243.898 | Infectologista
-              </p>
-            </div>
+            <p className="text-gray-500 text-sm text-center md:text-left">
+              © {currentYear} PrEPara. Todos os direitos reservados.
+            </p>
             <div className="flex gap-6 text-sm">
-              <Link href="/privacidade" className="text-slate-400 hover:text-white transition-colors">
-                Política de Privacidade
+              <Link href="/privacidade" className="text-gray-500 hover:text-white transition-colors">
+                Privacidade
               </Link>
-              <Link href="/termos" className="text-slate-400 hover:text-white transition-colors">
-                Termos de Uso
+              <Link href="/termos" className="text-gray-500 hover:text-white transition-colors">
+                Termos de uso
               </Link>
             </div>
           </div>

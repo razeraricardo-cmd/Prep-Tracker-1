@@ -1,11 +1,11 @@
 {
-  "name": "PrEP Saúde - Dr. Ricardo Razera",
-  "short_name": "PrEP Saúde",
-  "description": "Aplicativo de prevenção de ISTs e acompanhamento de PrEP com Dr. Ricardo Razera, médico infectologista",
+  "name": "PrEPara - Prevenção de ISTs",
+  "short_name": "PrEPara",
+  "description": "Consultas online com infectologista para PrEP e prevenção de ISTs. Dr. Ricardo Razera - CRM-SP 243.898",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0ea5e9",
-  "theme_color": "#0ea5e9",
+  "background_color": "#fafafa",
+  "theme_color": "#0f969c",
   "orientation": "portrait-primary",
   "icons": [
     {

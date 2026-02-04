@@ -1,7 +1,7 @@
 {
-  "name": "prep-saude-app",
-  "version": "1.0.0",
-  "description": "Aplicativo de Prevenção de ISTs e PrEP - Dr. Ricardo Razera",
+  "name": "prepara-app",
+  "version": "2.0.0",
+  "description": "PrEPara - Prevenção de ISTs com Dr. Ricardo Razera, médico infectologista",
   "private": true,
   "scripts": {
     "dev": "next dev",
