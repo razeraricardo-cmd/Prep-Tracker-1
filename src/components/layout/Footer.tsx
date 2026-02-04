@@ -77,23 +77,23 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-5">Informações</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/educacao/prep" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/#sobre-prep" className="text-gray-400 hover:text-white transition-colors">
                   O que é PrEP
                 </Link>
               </li>
               <li>
-                <Link href="/educacao/ist" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/#prevencao" className="text-gray-400 hover:text-white transition-colors">
                   ISTs e prevenção
                 </Link>
               </li>
               <li>
-                <Link href="/educacao/vacinas" className="text-gray-400 hover:text-white transition-colors">
-                  Vacinas importantes
+                <Link href="/sobre" className="text-gray-400 hover:text-white transition-colors">
+                  Sobre o médico
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-gray-400 hover:text-white transition-colors">
-                  Perguntas frequentes
+                <Link href="/login" className="text-gray-400 hover:text-white transition-colors">
+                  Área do paciente
                 </Link>
               </li>
             </ul>
@@ -133,14 +133,9 @@ export default function Footer() {
             <p className="text-gray-500 text-sm text-center md:text-left">
               © {currentYear} PrEPara. Todos os direitos reservados.
             </p>
-            <div className="flex gap-6 text-sm">
-              <Link href="/privacidade" className="text-gray-500 hover:text-white transition-colors">
-                Privacidade
-              </Link>
-              <Link href="/termos" className="text-gray-500 hover:text-white transition-colors">
-                Termos de uso
-              </Link>
-            </div>
+            <p className="text-gray-500 text-sm">
+              Atendimento 100% online com privacidade e sigilo
+            </p>
           </div>
         </div>
       </div>

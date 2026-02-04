@@ -309,10 +309,10 @@ export default function EducacaoPage() {
           ))}
         </div>
         <Link
-          href="/dashboard/educacao/faq"
+          href="/dashboard/educacao/prevencao-combinada"
           className="inline-flex items-center gap-1 text-primary-600 hover:underline text-sm mt-4"
         >
-          Ver todas as perguntas
+          Ver mais sobre prevenção
           <ArrowRight size={14} />
         </Link>
       </div>
