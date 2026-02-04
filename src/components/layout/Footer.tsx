@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Logo from '../icons/Logo';
 import { Mail, Phone, Instagram, MessageCircle } from 'lucide-react';
+import { siteConfig, getWhatsAppLink, getInstagramLink } from '@/config/site';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,12 +16,11 @@ export default function Footer() {
           <div className="space-y-5">
             <Logo size="md" variant="white" />
             <p className="text-gray-400 text-sm leading-relaxed">
-              Prevenção de ISTs e acompanhamento de PrEP com infectologista
-              especializado. Atendimento 100% online.
+              {siteConfig.brand.description}. Atendimento 100% online.
             </p>
             <div className="flex gap-3">
               <a
-                href="https://instagram.com/prepara.saude"
+                href={getInstagramLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 bg-white/10 rounded-xl hover:bg-[#e94560] transition-colors"
@@ -29,7 +29,7 @@ export default function Footer() {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://wa.me/5511999999999"
+                href={getWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 bg-white/10 rounded-xl hover:bg-[#25D366] transition-colors"
@@ -105,23 +105,23 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-gray-400">
                 <Mail size={18} className="text-[#0f969c]" />
-                <a href="mailto:contato@prepara.com.br" className="hover:text-white transition-colors">
-                  contato@prepara.com.br
+                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-white transition-colors">
+                  {siteConfig.contact.email}
                 </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone size={18} className="text-[#0f969c]" />
-                <a href="https://wa.me/5511999999999" className="hover:text-white transition-colors">
-                  (11) 99999-9999
+                <a href={getWhatsAppLink()} className="hover:text-white transition-colors">
+                  {siteConfig.contact.whatsappDisplay}
                 </a>
               </li>
             </ul>
 
             <div className="mt-6 p-4 bg-white/5 rounded-xl">
               <p className="text-sm text-gray-300">
-                <strong className="text-white">Dr. Ricardo Razera</strong><br />
-                CRM-SP 243.898<br />
-                Médico Infectologista
+                <strong className="text-white">{siteConfig.doctor.name}</strong><br />
+                {siteConfig.doctor.crm}<br />
+                {siteConfig.doctor.specialty}
               </p>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm text-center md:text-left">
-              © {currentYear} PrEPara. Todos os direitos reservados.
+              © {currentYear} {siteConfig.brand.name}. Todos os direitos reservados.
             </p>
             <p className="text-gray-500 text-sm">
               Atendimento 100% online com privacidade e sigilo

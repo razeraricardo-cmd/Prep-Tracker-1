@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Logo from '@/components/icons/Logo';
+import { siteConfig, getWhatsAppLink } from '@/config/site';
 import {
   ArrowLeft,
   ArrowRight,
@@ -513,7 +514,7 @@ export default function AgendarPage() {
                   Voltar ao início
                 </Link>
                 <a
-                  href={`https://wa.me/5511999999999?text=Olá! Acabei de agendar uma consulta para ${formatDate(formData.data)} às ${formData.horario}`}
+                  href={getWhatsAppLink(`Olá! Acabei de agendar uma consulta para ${formatDate(formData.data)} às ${formData.horario}`)}
                   target="_blank"
                   className="btn-primary"
                 >

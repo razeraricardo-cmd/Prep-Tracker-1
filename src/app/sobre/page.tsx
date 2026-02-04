@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { siteConfig, getWhatsAppLink } from '@/config/site';
 import {
   Award,
   BookOpen,
@@ -57,7 +58,7 @@ export default function SobrePage() {
                   <ArrowRight size={18} />
                 </Link>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href={getWhatsAppLink()}
                   target="_blank"
                   className="btn-secondary"
                 >

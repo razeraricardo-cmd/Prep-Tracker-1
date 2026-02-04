@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { siteConfig, getWhatsAppLink } from '@/config/site';
 import {
   Shield,
   Syringe,
@@ -541,7 +542,7 @@ export default function HomePage() {
               <ArrowRight size={18} />
             </Link>
             <Link
-              href="https://wa.me/5511999999999"
+              href={getWhatsAppLink()}
               target="_blank"
               className="inline-flex items-center justify-center gap-2 bg-transparent text-white font-semibold py-4 px-8 rounded-full border-2 border-white hover:bg-white/10 transition-colors"
             >
