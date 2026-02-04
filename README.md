@@ -1,6 +1,16 @@
 # PrEP Saúde - Aplicativo de Prevenção de ISTs
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/razeraricardo-cmd/Prep-Tracker-1)
+
 Aplicativo de telemedicina para prevenção de Infecções Sexualmente Transmissíveis (ISTs) e acompanhamento de PrEP (Profilaxia Pré-Exposição ao HIV), desenvolvido para o **Dr. Ricardo José Razera** (CRM SP 243.898), médico infectologista pelo Instituto de Infectologia Emílio Ribas.
+
+## Deploy Rápido (1 clique)
+
+**Clique no botão abaixo para publicar seu aplicativo na internet:**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/razeraricardo-cmd/Prep-Tracker-1)
+
+> Após o deploy, seu app estará disponível em um endereço como: `https://prep-saude-xxx.vercel.app`
 
 ## Funcionalidades
 
