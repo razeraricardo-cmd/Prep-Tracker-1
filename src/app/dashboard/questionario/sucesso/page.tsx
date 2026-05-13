@@ -1,7 +1,5 @@
-'use client';
-
 import Link from 'next/link';
-import { CheckCircle, Calendar, ArrowRight, FileText, Clock } from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 
 export default function QuestionarioSucessoPage() {
   return (

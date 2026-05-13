@@ -25,44 +25,60 @@ interface DashboardLayoutProps {
   children: React.ReactNode;
 }
 
+interface NavItem {
+  href: string;
+  icon: typeof Home;
+  label: string;
+}
+
+const mainNav: NavItem[] = [
+  { href: '/dashboard', icon: Home, label: 'Início' },
+  { href: '/dashboard/prevencao', icon: Shield, label: 'Minha Prevenção' },
+  { href: '/dashboard/consultas', icon: Calendar, label: 'Consultas' },
+  { href: '/dashboard/vacinas', icon: Syringe, label: 'Vacinas' },
+  { href: '/dashboard/exames', icon: FileText, label: 'Meus Exames' },
+  { href: '/dashboard/educacao', icon: BookOpen, label: 'Aprenda' },
+];
+
+const secondaryNav: NavItem[] = [
+  { href: '/dashboard/perfil', icon: User, label: 'Meu Perfil' },
+  { href: '/dashboard/configuracoes', icon: Settings, label: 'Configurações' },
+  { href: '/dashboard/suporte', icon: MessageCircle, label: 'Suporte' },
+];
+
+function NavLink({
+  item,
+  pathname,
+  onClick,
+}: {
+  item: NavItem;
+  pathname: string;
+  onClick?: () => void;
+}) {
+  const isActive =
+    pathname === item.href ||
+    (item.href !== '/dashboard' && pathname.startsWith(item.href));
+  const Icon = item.icon;
+
+  return (
+    <Link
+      href={item.href}
+      onClick={onClick}
+      className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
+        isActive
+          ? 'bg-primary-100 text-primary-700 font-semibold'
+          : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+      }`}
+    >
+      <Icon size={20} />
+      <span>{item.label}</span>
+    </Link>
+  );
+}
+
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const mainNav = [
-    { href: '/dashboard', icon: Home, label: 'Início' },
-    { href: '/dashboard/prevencao', icon: Shield, label: 'Minha Prevenção' },
-    { href: '/dashboard/consultas', icon: Calendar, label: 'Consultas' },
-    { href: '/dashboard/vacinas', icon: Syringe, label: 'Vacinas' },
-    { href: '/dashboard/exames', icon: FileText, label: 'Meus Exames' },
-    { href: '/dashboard/educacao', icon: BookOpen, label: 'Aprenda' },
-  ];
-
-  const secondaryNav = [
-    { href: '/dashboard/perfil', icon: User, label: 'Meu Perfil' },
-    { href: '/dashboard/configuracoes', icon: Settings, label: 'Configurações' },
-    { href: '/dashboard/suporte', icon: MessageCircle, label: 'Suporte' },
-  ];
-
-  const NavLink = ({ item, onClick }: { item: typeof mainNav[0]; onClick?: () => void }) => {
-    const isActive = pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href));
-    const Icon = item.icon;
-
-    return (
-      <Link
-        href={item.href}
-        onClick={onClick}
-        className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
-          isActive
-            ? 'bg-primary-100 text-primary-700 font-semibold'
-            : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
-        }`}
-      >
-        <Icon size={20} />
-        <span>{item.label}</span>
-      </Link>
-    );
-  };
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -76,7 +92,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
         <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
           {mainNav.map((item) => (
-            <NavLink key={item.href} item={item} />
+            <NavLink key={item.href} item={item} pathname={pathname} />
           ))}
 
           <div className="pt-4 mt-4 border-t border-slate-100">
@@ -84,7 +100,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               Conta
             </p>
             {secondaryNav.map((item) => (
-              <NavLink key={item.href} item={item} />
+              <NavLink key={item.href} item={item} pathname={pathname} />
             ))}
           </div>
         </nav>
@@ -144,7 +160,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
         <nav className="p-4 space-y-1">
           {mainNav.map((item) => (
-            <NavLink key={item.href} item={item} onClick={() => setSidebarOpen(false)} />
+            <NavLink key={item.href} item={item} pathname={pathname} onClick={() => setSidebarOpen(false)} />
           ))}
 
           <div className="pt-4 mt-4 border-t border-slate-100">
@@ -152,7 +168,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               Conta
             </p>
             {secondaryNav.map((item) => (
-              <NavLink key={item.href} item={item} onClick={() => setSidebarOpen(false)} />
+              <NavLink key={item.href} item={item} pathname={pathname} onClick={() => setSidebarOpen(false)} />
             ))}
           </div>
         </nav>
