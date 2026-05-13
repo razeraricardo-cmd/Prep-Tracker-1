@@ -50,6 +50,36 @@ interface FormData {
   acceptMarketing: boolean;
 }
 
+const genderOptions = [
+  { value: 'masculino', label: 'Masculino' },
+  { value: 'feminino', label: 'Feminino' },
+  { value: 'outro', label: 'Outro' },
+  { value: 'prefiro_nao_dizer', label: 'Prefiro não dizer' },
+];
+
+const identidadeOptions = [
+  { value: 'cisgênero', label: 'Cisgênero' },
+  { value: 'transgênero', label: 'Transgênero' },
+  { value: 'não-binário', label: 'Não-binário' },
+  { value: 'outro', label: 'Outro' },
+  { value: 'prefiro_nao_dizer', label: 'Prefiro não dizer' },
+];
+
+const orientacaoOptions = [
+  { value: 'heterossexual', label: 'Heterossexual' },
+  { value: 'homossexual', label: 'Homossexual' },
+  { value: 'bissexual', label: 'Bissexual' },
+  { value: 'pansexual', label: 'Pansexual' },
+  { value: 'outro', label: 'Outro' },
+  { value: 'prefiro_nao_dizer', label: 'Prefiro não dizer' },
+];
+
+const stateOptions = [
+  'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS',
+  'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC',
+  'SP', 'SE', 'TO',
+];
+
 export default function CadastroPage() {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
@@ -167,36 +197,6 @@ export default function CadastroPage() {
 
     router.push('/cadastro/sucesso');
   };
-
-  const genderOptions = [
-    { value: 'masculino', label: 'Masculino' },
-    { value: 'feminino', label: 'Feminino' },
-    { value: 'outro', label: 'Outro' },
-    { value: 'prefiro_nao_dizer', label: 'Prefiro não dizer' },
-  ];
-
-  const identidadeOptions = [
-    { value: 'cisgênero', label: 'Cisgênero' },
-    { value: 'transgênero', label: 'Transgênero' },
-    { value: 'não-binário', label: 'Não-binário' },
-    { value: 'outro', label: 'Outro' },
-    { value: 'prefiro_nao_dizer', label: 'Prefiro não dizer' },
-  ];
-
-  const orientacaoOptions = [
-    { value: 'heterossexual', label: 'Heterossexual' },
-    { value: 'homossexual', label: 'Homossexual' },
-    { value: 'bissexual', label: 'Bissexual' },
-    { value: 'pansexual', label: 'Pansexual' },
-    { value: 'outro', label: 'Outro' },
-    { value: 'prefiro_nao_dizer', label: 'Prefiro não dizer' },
-  ];
-
-  const stateOptions = [
-    'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS',
-    'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC',
-    'SP', 'SE', 'TO'
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
